@@ -127,11 +127,7 @@ public class TransActivity extends AppCompatActivity {
     private void parseJackson(String s){
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            Log.d("ExceptionTest", "test1");
-            final ArrayList<Transaction> list =
-                    objectMapper.readValue(s,
-                            new TypeReference<List<Transaction>>(){});
-            Log.d("ExceptionTest", "test2");
+            final ArrayList<Transaction> list = objectMapper.readValue(s, new TypeReference<List<Transaction>>(){});
             Log.d("JACKSON",list.size()+"/"+list.get(0).getAmount());
             runOnUiThread(new Runnable() {
                 @Override
@@ -140,6 +136,7 @@ public class TransActivity extends AppCompatActivity {
                 }
             });
         } catch (IOException e) {
+            Log.d("ExceptionTest", "occur");
             e.printStackTrace();
         }
     }

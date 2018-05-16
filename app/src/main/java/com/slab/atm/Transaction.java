@@ -6,6 +6,13 @@ public class Transaction {
     int amount;
     int type;
 
+
+    //the JacksonException problem
+    public Transaction() {
+
+    }
+
+
     public Transaction(String account, String date, int amount, int type) {
         this.account = account;
         this.date = date;
